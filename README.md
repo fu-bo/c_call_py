@@ -1,5 +1,5 @@
 # C Python Api
-Example of calling a python function from C++
+An example of calling a python function from C++
 
 ## Build
 ```bash
