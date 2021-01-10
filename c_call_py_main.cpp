@@ -50,7 +50,7 @@ int main(void) {
     }
     npy_intp* outputSize = PyArray_DIMS(outputArray);
     npy_intp outputRows = outputSize[0], outputCols = outputSize[1];
-    void* outputPtr = PyArray_DATA(reinterpret_cast<PyArrayObject *>(output));
+    void* outputPtr = PyArray_DATA(output);
     int* intOutputPtr = static_cast<int *>(outputPtr);
     std::cout << "outputRows = " << outputRows << "\n";
     std::cout << "outputCols = " << outputCols << "\n";
@@ -61,5 +61,40 @@ int main(void) {
         }
         std::cout << "\n";
     }
+
+    // There are probably still some memory leaks, need to fix
+    std::cout << "sys: " << Py_REFCNT(sys) << "\n";
+    std::cout << "path: " << Py_REFCNT(path) << "\n";
+    std::cout << "moduleString: " << Py_REFCNT(moduleString) << "\n";
+    std::cout << "modul: " << Py_REFCNT(modul) << "\n";
+    std::cout << "dict: " << Py_REFCNT(dict) << "\n";
+    std::cout << "func: " << Py_REFCNT(func) << "\n";
+
+    std::cout << "input: " << Py_REFCNT(input) << "\n";
+    std::cout << "pyArgs: " << Py_REFCNT(pyArgs) << "\n";
+    std::cout << "output: " << Py_REFCNT(output) << "\t" << PyArray_DATA(output) << "\n";
+    std::cout << "outputArray: " << Py_REFCNT(outputArray) << "\t" << PyArray_DATA(outputArray) << "\n";
+    std::cout << "\n";
+
+    Py_XDECREF(pyArgs);
+    Py_XDECREF(outputArray);
+    // Py_XDECREF(func);
+    Py_XDECREF(modul);
+    Py_XDECREF(moduleString);
+    Py_XDECREF(path);
+    Py_Finalize();
+
+    std::cout << "sys: " << Py_REFCNT(sys) << "\n";
+    std::cout << "path: " << Py_REFCNT(path) << "\n";
+    std::cout << "moduleString: " << Py_REFCNT(moduleString) << "\n";
+    std::cout << "modul: " << Py_REFCNT(modul) << "\n";
+    std::cout << "dict: " << Py_REFCNT(dict) << "\n";
+    std::cout << "func: " << Py_REFCNT(func) << "\n";
+
+    std::cout << "input: " << Py_REFCNT(input) << "\n";
+    std::cout << "pyArgs: " << Py_REFCNT(pyArgs) << "\n";
+    std::cout << "output: " << Py_REFCNT(output) << "\n";
+    std::cout << "outputArray: " << Py_REFCNT(outputArray) << "\n";
+    std::cout << "\n";
 
 }

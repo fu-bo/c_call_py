@@ -13,5 +13,6 @@ https://numpy.org/doc/stable/user/c-info.html
 https://stackoverflow.com/questions/30357115/pyarray-simplenewfromdata-example
 https://numpy.org/doc/1.17/reference/c-api.dtype.html
 https://het.as.utexas.edu/HET/Software/Numpy/reference/c-api.array.html
+https://docs.python.org/3/c-api/init.html
 
 https://www.boost.org/doc/libs/1_63_0/libs/python/doc/html/numpy/tutorial/ndarray.html
