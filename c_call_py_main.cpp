@@ -42,15 +42,15 @@ int main(void) {
     PyObject * output = PyObject_CallObject(func, pyArgs);
 
     // Interpret python function output
-    auto outputArray = reinterpret_cast<PyArrayObject *>(output);
+    PyArrayObject * outputArray = reinterpret_cast<PyArrayObject *>(output);
     int outputNDim = PyArray_NDIM(outputArray);
     if (outputNDim != 2) {
       throw std::runtime_error(
         "expecting a 2D array but got " + std::to_string(outputNDim));
     }
-    auto outputSize = PyArray_DIMS(outputArray);
-    auto outputRows = outputSize[0], outputCols = outputSize[1];
-    auto outputPtr = PyArray_DATA(reinterpret_cast<PyArrayObject *>(output));
+    npy_intp* outputSize = PyArray_DIMS(outputArray);
+    npy_intp outputRows = outputSize[0], outputCols = outputSize[1];
+    void* outputPtr = PyArray_DATA(reinterpret_cast<PyArrayObject *>(output));
     int* intOutputPtr = static_cast<int *>(outputPtr);
     std::cout << "outputRows = " << outputRows << "\n";
     std::cout << "outputCols = " << outputCols << "\n";
