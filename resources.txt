@@ -10,4 +10,8 @@ https://docs.python.org/3/extending/extending.html
 https://numpy.org/doc/stable/user/c-info.how-to-extend.html
 https://numpy.org/doc/stable/user/c-info.html
 
+https://stackoverflow.com/questions/30357115/pyarray-simplenewfromdata-example
+https://numpy.org/doc/1.17/reference/c-api.dtype.html
+https://het.as.utexas.edu/HET/Software/Numpy/reference/c-api.array.html
+
 https://www.boost.org/doc/libs/1_63_0/libs/python/doc/html/numpy/tutorial/ndarray.html
