@@ -1,0 +1,13 @@
+https://stackoverflow.com/questions/3286448/calling-a-python-method-from-c-c-and-extracting-its-return-value
+https://stackoverflow.com/questions/48849047/replacing-pystring-fromstring-method-in-python-3
+https://stackoverflow.com/questions/59062047/how-to-use-cmake-to-link-the-numpy-arrayobject-h
+https://stackoverflow.com/questions/46493307/embed-python-numpy-in-c
+https://www.coveros.com/calling-python-code-from-c/
+
+https://docs.python.org/3/c-api/intro.html
+https://docs.python.org/3/extending/extending.html
+
+https://numpy.org/doc/stable/user/c-info.how-to-extend.html
+https://numpy.org/doc/stable/user/c-info.html
+
+https://www.boost.org/doc/libs/1_63_0/libs/python/doc/html/numpy/tutorial/ndarray.html
