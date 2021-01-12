@@ -15,4 +15,7 @@ https://numpy.org/doc/1.17/reference/c-api.dtype.html
 https://het.as.utexas.edu/HET/Software/Numpy/reference/c-api.array.html
 https://docs.python.org/3/c-api/init.html
 
+https://pythonextensionpatterns.readthedocs.io/en/latest/refcount.html
+https://docs.python.org/3/c-api/refcounting.html
+
 https://www.boost.org/doc/libs/1_63_0/libs/python/doc/html/numpy/tutorial/ndarray.html

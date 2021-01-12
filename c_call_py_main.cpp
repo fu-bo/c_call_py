@@ -12,9 +12,11 @@
 
 int main(void) {
     // Initialize
+    std::cout << "Py_IsInitialized() = " << Py_IsInitialized() << "\n";
     Py_Initialize();
     import_array();
     // np::initialize();
+    std::cout << "Py_IsInitialized() = " << Py_IsInitialized() << "\n";
 
     // Import python functions
     PyObject * sys = PyImport_ImportModule("sys");
@@ -63,6 +65,7 @@ int main(void) {
     }
 
     // There are probably still some memory leaks, need to fix
+    std::cout << "Py_IsInitialized() = " << Py_IsInitialized() << "\n";
     std::cout << "sys: " << Py_REFCNT(sys) << "\n";
     std::cout << "path: " << Py_REFCNT(path) << "\n";
     std::cout << "moduleString: " << Py_REFCNT(moduleString) << "\n";
@@ -84,6 +87,7 @@ int main(void) {
     Py_XDECREF(path);
     Py_Finalize();
 
+    std::cout << "Py_IsInitialized() = " << Py_IsInitialized() << "\n";
     std::cout << "sys: " << Py_REFCNT(sys) << "\n";
     std::cout << "path: " << Py_REFCNT(path) << "\n";
     std::cout << "moduleString: " << Py_REFCNT(moduleString) << "\n";
