@@ -45,6 +45,11 @@ int main(void) {
 
     // Interpret python function output
     PyArrayObject * outputArray = reinterpret_cast<PyArrayObject *>(output);
+    // If there are multiple outputs from the python function, use the following
+    // int outputVarNum = PyTuple_Size(output);
+    // std::cout << "outputVarNum = " << outputVarNum << "\n\n";
+    // PyObject * tupleObj0 = PyTuple_GetItem(output, 0);
+    // PyArrayObject * outputArray = reinterpret_cast<PyArrayObject *>(tupleObj0);
     int outputNDim = PyArray_NDIM(outputArray);
     if (outputNDim != 2) {
       throw std::runtime_error(
@@ -52,7 +57,7 @@ int main(void) {
     }
     npy_intp* outputSize = PyArray_DIMS(outputArray);
     npy_intp outputRows = outputSize[0], outputCols = outputSize[1];
-    void* outputPtr = PyArray_DATA(output);
+    void* outputPtr = PyArray_DATA(outputArray);
     int* intOutputPtr = static_cast<int *>(outputPtr);
     std::cout << "outputRows = " << outputRows << "\n";
     std::cout << "outputCols = " << outputCols << "\n";
