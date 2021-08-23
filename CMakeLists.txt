@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3)
 
-project(captureflag_python)
+project(py_call_c)
 
 option(CXX "enable C++ compilation" ON)
 if(CXX)
@@ -23,9 +23,5 @@ include_directories(
   )
 message("${PYTHON_INCLUDE_DIRS} and ${PYTHON_NUMPY_INCLUDE_DIRS}")
 
-set(SRC_DIR src/)
 add_executable(c_call_py_main c_call_py_main.cpp)
 target_link_libraries(c_call_py_main ${PYTHON_LIBRARIES} Python::NumPy)
-
-
-
